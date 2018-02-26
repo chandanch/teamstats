@@ -20,19 +20,28 @@ export class HomePage {
   ionViewDidLoad() {
     // get the sheet data once the page is loaded
     this.loading = this.loadingController.create({
-      content: `Loading data..`,
+      content: `Loading stats..`,
       spinner: 'dots',
     })
     this.loading.present();
     this.fetchData();
   }
 
+  /** 
+  * @desc get the sheet data from gsheet provider 
+  */
+
   fetchData() {
     this.gSheetsProvider.getSheetData(this.sheetId).subscribe(
       (sheetData: any) => {
         console.log("Sheets Data", sheetData);
+        // get the rows for now.
         this.teamStats = sheetData["rows"];
         this.loading.dismiss();
+      },
+      error => {
+        this.loading.dismiss();
+        alert("Oops! Failed to fetch details");
       }
     )
   }
