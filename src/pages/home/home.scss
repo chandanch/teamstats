@@ -1,3 +1,29 @@
-page-home {
-
+ion-col h5 {
+    color: #fff;
 }
+
+ion-col {
+    text-align: center;
+}
+
+
+
+ion-grid {
+
+    ion-row:first-child {
+        background: #8e8e8f;
+        color: #fff;
+    }
+    ion-row:nth-child(odd):not(:first-child) {
+        background: #eeeeee
+    }
+
+    ion-row:nth-child(even) {
+        background: #d4cece
+    }
+}
+
+
+// .content:nth-child(even) {
+//     background: #333333
+// }
