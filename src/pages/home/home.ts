@@ -42,7 +42,7 @@ export class HomePage {
    * @param refresher 
    */
   getUpdates(refresher: any) {
-    this.gSheetsProvider.getSheetData('1sH2CD9NAB1BgAEkDjYjExzLIoDT47J5RSE22PJFMO_E').subscribe(
+    this.gSheetsProvider.getSheetData(this.sheetId).subscribe(
       (sheetData: any) => {
         console.log("Sheets Data", sheetData);
         this.teamStats = sheetData["rows"];
